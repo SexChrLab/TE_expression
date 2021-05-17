@@ -1,0 +1,2674 @@
+{
+  "genome_paths": {
+    "Ref_GRCh38_Y_HardMasked": "/scratch/amtarave/introgression_pilot/elife/TCGA_exome_processing/refs/GRCh38_Ymasked_reference_viral_vsv.fa",
+		"Ref_GRCh38_Y_PARsMasked": "/scratch/amtarave/introgression_pilot/elife/TCGA_exome_processing/refs/GRCh38_minusYpar_reference_viral_vsv.fa"
+	},
+
+  "gene_gtf": "/data/CEM/shared/public_data/references/GENCODE/gencode.v29.annotation.gtf",
+
+  "TE_gtf": "/scratch/amtarave/TE_expression/te_gtf/GRCh38_GENCODE_rmsk_TE.gtf",
+
+  "scratchdir": "/scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/",
+
+  "bam_path": "/data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam/",
+
+  "adapters": "/data/CEM/shared/public_data/references/adapters/illumina_adapter.fa",
+
+  "STAR_index_XX": "/scratch/amtarave/TE_expression/STAR_index_GRCh38_p12_genome_XXonly_lihc/",
+
+  "STAR_index_XY": "/scratch/amtarave/TE_expression/STAR_index_GRCh38_p12_genome_XY_lihc/",
+
+  "sample_name": [
+    "2V-A95S-01A-XY",
+		"2Y-A9GT-01A-XY",
+		"2Y-A9GU-01A-XX",
+		"2Y-A9GV-01A-XX",
+		"2Y-A9GW-01A-XY",
+		"2Y-A9GX-01A-XY",
+		"2Y-A9GY-01A-XX",
+		"2Y-A9GZ-01A-XX",
+		"2Y-A9H1-01A-XY",
+		"2Y-A9H2-01A-XX",
+		"2Y-A9H5-01A-XX",
+		"2Y-A9H6-01A-XX",
+		"2Y-A9H7-01A-XX",
+		"2Y-A9H8-01A-XX",
+		"2Y-A9H9-01A-XY",
+		"2Y-A9HA-01A-XY",
+		"4R-AA8I-01A-XY",
+		"5C-A9VG-01A-XY",
+		"5C-A9VH-01A-XY",
+		"5C-AAPD-01A-XY",
+		"5R-AA1C-01A-XY",
+		"5R-AA1D-01A-XX",
+		"5R-AAAM-01A-XX",
+		"BC-4073-01B-XY",
+		"BC-A10Q-01A-XX",
+		"BC-A10R-01A-XX",
+		"BC-A10S-01A-XY",
+		"BC-A10T-01A-XY",
+		"BC-A10U-01A-XY",
+		"BC-A10W-01A-XY",
+		"BC-A10X-01A-XX",
+		"BC-A10Y-01A-XY",
+		"BC-A10Z-01A-XX",
+		"BC-A112-01A-XY",
+		"BC-A216-01A-XX",
+		"BC-A217-01A-XX",
+		"BC-A3KF-01A-XX",
+		"BC-A3KG-01A-XX",
+		"BC-A5W4-01A-XY",
+		"BC-A69H-01A-XY",
+		"BC-A69I-01A-XY",
+		"BC-A8YO-01A-XX",
+		"BD-A2L6-01A-XY",
+		"BD-A3ER-01A-XY",
+		"BW-A5NQ-01A-XY",
+		"CC-5258-01A-XY",
+		"CC-5259-01A-XX",
+		"CC-5260-01A-XX",
+		"CC-5261-01A-XY",
+		"CC-5262-01A-XY",
+		"CC-5263-01A-XY",
+		"CC-5264-01A-XY",
+		"CC-A123-01A-XX",
+		"CC-A1HT-01A-XY",
+		"CC-A3M9-01A-XY",
+		"CC-A3MA-01A-XY",
+		"CC-A3MB-01A-XY",
+		"CC-A3MC-01A-XY",
+		"CC-A5UC-01A-XY",
+		"CC-A5UD-01A-XY",
+		"CC-A5UE-01A-XY",
+		"CC-A7IE-01A-XY",
+		"CC-A7IF-01A-XY",
+		"CC-A7IG-01A-XY",
+		"CC-A7IH-01A-XY",
+		"CC-A7II-01A-XY",
+		"CC-A7IJ-01A-XY",
+		"CC-A7IK-01A-XY",
+		"CC-A7IL-01A-XY",
+		"CC-A8HS-01A-XY",
+		"CC-A8HT-01A-XY",
+		"CC-A8HU-01A-XX",
+		"CC-A8HV-01A-XX",
+		"CC-A9FS-01A-XY",
+		"CC-A9FU-01A-XX",
+		"CC-A9FV-01A-XY",
+		"CC-A9FW-01A-XY",
+		"DD-A113-01A-XX",
+		"DD-A115-01A-XY",
+		"DD-A116-01A-XY",
+		"DD-A118-01A-XX",
+		"DD-A119-01A-XY",
+		"DD-A11B-01A-XY",
+		"DD-A11C-01A-XY",
+		"DD-A11D-01A-XX",
+		"DD-A1EB-01A-XX",
+		"DD-A1EC-01A-XX",
+		"DD-A1ED-01A-XY",
+		"DD-A1EE-01A-XY",
+		"DD-A1EF-01A-XX",
+		"DD-A1EG-01A-XY",
+		"DD-A1EH-01A-XY",
+		"DD-A1EI-01A-XY",
+		"DD-A1EJ-01A-XX",
+		"DD-A1EK-01A-XX",
+		"DD-A39V-01A-XY",
+		"DD-A39W-01A-XX",
+		"DD-A39X-01A-XX",
+		"DD-A39Y-01A-XY",
+		"DD-A39Z-01A-XX",
+		"DD-A3A1-01A-XY",
+		"DD-A3A2-01A-XX",
+		"DD-A3A3-01A-XY",
+		"DD-A3A4-01A-XY",
+		"DD-A3A5-01A-XX",
+		"DD-A3A6-01A-XX",
+		"DD-A3A7-01A-XY",
+		"DD-A3A8-01A-XY",
+		"DD-A3A9-01A-XX",
+		"DD-A4NA-01A-XX",
+		"DD-A4NB-01A-XY",
+		"DD-A4ND-01A-XX",
+		"DD-A4NE-01A-XX",
+		"DD-A4NG-01A-XY",
+		"DD-A4NH-01A-XX",
+		"DD-A4NI-01A-XY",
+		"DD-A4NJ-01A-XX",
+		"DD-A4NK-01A-XX",
+		"DD-A4NL-01A-XY",
+		"DD-A4NN-01A-XX",
+		"DD-A4NO-01A-XY",
+		"DD-A4NP-01A-XY",
+		"DD-A4NQ-01A-XY",
+		"DD-A4NR-01A-XX",
+		"DD-A4NS-01A-XX",
+		"DD-A4NV-01A-XY",
+		"DD-A73A-01A-XY",
+		"DD-A73B-01A-XX",
+		"DD-A73C-01A-XX",
+		"DD-A73D-01A-XX",
+		"DD-A73E-01A-XY",
+		"DD-A73F-01A-XX",
+		"DD-A73G-01A-XX",
+		"DD-AA3A-01A-XX",
+		"DD-AAC8-01A-XY",
+		"DD-AAC9-01A-XY",
+		"DD-AACA-01A-XY",
+		"DD-AACB-01A-XX",
+		"DD-AACC-01A-XY",
+		"DD-AACD-01A-XY",
+		"DD-AACE-01A-XY",
+		"DD-AACF-01A-XY",
+		"DD-AACG-01A-XY",
+		"DD-AACH-01A-XY",
+		"DD-AACI-01A-XY",
+		"DD-AACJ-01A-XY",
+		"DD-AACK-01A-XY",
+		"DD-AACL-01A-XX",
+		"DD-AACN-01A-XY",
+		"DD-AACO-01A-XY",
+		"DD-AACP-01A-XY",
+		"DD-AACQ-01A-XY",
+		"DD-AACS-01A-XY",
+		"DD-AACT-01A-XX",
+		"DD-AACU-01A-XY",
+		"DD-AACV-01A-XY",
+		"DD-AACW-01A-XY",
+		"DD-AACX-01A-XY",
+		"DD-AACY-01A-XY",
+		"DD-AACZ-01A-XX",
+		"DD-AAD0-01A-XX",
+		"DD-AAD1-01A-XX",
+		"DD-AAD2-01A-XY",
+		"DD-AAD3-01A-XY",
+		"DD-AAD5-01A-XY",
+		"DD-AAD6-01A-XY",
+		"DD-AAD8-01A-XX",
+		"DD-AADA-01A-XX",
+		"DD-AADB-01A-XY",
+		"DD-AADC-01A-XY",
+		"DD-AADD-01A-XY",
+		"DD-AADF-01A-XX",
+		"DD-AADG-01A-XY",
+		"DD-AADI-01A-XX",
+		"DD-AADJ-01A-XX",
+		"DD-AADK-01A-XX",
+		"DD-AADL-01A-XY",
+		"DD-AADM-01A-XY",
+		"DD-AADN-01A-XY",
+		"DD-AADO-01A-XY",
+		"DD-AADP-01A-XY",
+		"DD-AADQ-01A-XY",
+		"DD-AADR-01A-XY",
+		"DD-AADS-01A-XY",
+		"DD-AADU-01A-XY",
+		"DD-AADV-01A-XY",
+		"DD-AADW-01A-XY",
+		"DD-AADY-01A-XX",
+		"DD-AAE0-01A-XX",
+		"DD-AAE1-01A-XY",
+		"DD-AAE2-01A-XY",
+		"DD-AAE3-01A-XY",
+		"DD-AAE4-01A-XX",
+		"DD-AAE7-01A-XY",
+		"DD-AAE9-01A-XY",
+		"DD-AAEA-01A-XY",
+		"DD-AAEB-01A-XY",
+		"DD-AAED-01A-XY",
+		"DD-AAEE-01A-XY",
+		"DD-AAEG-01A-XX",
+		"DD-AAEH-01A-XY",
+		"DD-AAEI-01A-XY",
+		"DD-AAEK-01A-XY",
+		"DD-AAVP-01A-XY",
+		"DD-AAVQ-01A-XY",
+		"DD-AAVR-01A-XY",
+		"DD-AAVS-01A-XY",
+		"DD-AAVU-01A-XY",
+		"DD-AAVV-01A-XY",
+		"DD-AAVW-01A-XY",
+		"DD-AAVX-01A-XY",
+		"DD-AAVY-01A-XY",
+		"DD-AAVZ-01A-XY",
+		"DD-AAW0-01A-XY",
+		"DD-AAW1-01A-XY",
+		"DD-AAW2-01A-XY",
+		"DD-AAW3-01A-XY",
+		"ED-A459-01A-XY",
+		"ED-A4XI-01A-XY",
+		"ED-A5KG-01A-XX",
+		"ED-A66X-01A-XY",
+		"ED-A66Y-01A-XX",
+		"ED-A7PX-01A-XX",
+		"ED-A7PY-01A-XX",
+		"ED-A7PZ-01A-XY",
+		"ED-A7XO-01A-XY",
+		"ED-A7XP-01A-XX",
+		"ED-A82E-01A-XX",
+		"ED-A8O5-01A-XX",
+		"ED-A8O6-01A-XX",
+		"ED-A97K-01A-XY",
+		"EP-A26S-01A-XY",
+		"EP-A2KA-01A-XX",
+		"EP-A2KB-01A-XX",
+		"EP-A3JL-01A-XY",
+		"EP-A3RK-01A-XY",
+		"ES-A2HS-01A-XY",
+		"FV-A23B-01A-XX",
+		"FV-A2QQ-01A-XY",
+		"FV-A2QR-01A-XY",
+		"FV-A3I0-01A-XX",
+		"FV-A3I1-01A-XX",
+		"FV-A3R2-01A-XY",
+		"FV-A3R3-01A-XX",
+		"FV-A495-01A-XX",
+		"FV-A496-01A-XX",
+		"FV-A4ZP-01A-XY",
+		"FV-A4ZQ-01A-XY",
+		"G3-A25S-01A-XY",
+		"G3-A25T-01A-XX",
+		"G3-A25U-01A-XX",
+		"G3-A25V-01A-XY",
+		"G3-A25Y-01A-XX",
+		"G3-A25Z-01A-XY",
+		"G3-A3CG-01A-XY",
+		"G3-A3CH-01A-XY",
+		"G3-A3CI-01A-XY",
+		"G3-A3CK-01A-XY",
+		"G3-A5SJ-01A-XY",
+		"G3-A5SK-01A-XY",
+		"G3-A5SL-01A-XY",
+		"G3-A5SM-01A-XY",
+		"G3-A6UC-01A-XY",
+		"G3-A7M5-01A-XY",
+		"G3-A7M6-01A-XX",
+		"G3-A7M7-01A-XY",
+		"G3-A7M8-01A-XY",
+		"G3-A7M9-01A-XY",
+		"G3-AAUZ-01A-XY",
+		"G3-AAV0-01A-XY",
+		"G3-AAV1-01A-XY",
+		"G3-AAV2-01A-XY",
+		"G3-AAV4-01A-XX",
+		"G3-AAV5-01A-XY",
+		"G3-AAV6-01A-XX",
+		"G3-AAV7-01A-XY",
+		"GJ-A3OU-01A-XY",
+		"GJ-A6C0-01A-XX",
+		"GJ-A9DB-01A-XY",
+		"HP-A5MZ-01A-XY",
+		"HP-A5N0-01A-XX",
+		"K7-A5RF-01A-XY",
+		"K7-A6G5-01A-XY",
+		"K7-AAU7-01A-XY",
+		"KR-A7K0-01A-XY",
+		"KR-A7K2-01A-XY",
+		"KR-A7K7-01A-XX",
+		"LG-A6GG-01A-XX",
+		"LG-A9QC-01A-XY",
+		"MI-A75C-01A-XY",
+		"MI-A75E-01A-XY",
+		"MI-A75G-01A-XY",
+		"MI-A75H-01A-XY",
+		"MR-A520-01A-XY",
+		"MR-A8JO-01A-XY",
+		"NI-A4U2-01A-XY",
+		"NI-A8LF-01A-XY",
+		"PD-A5DF-01A-XX",
+		"RC-A6M4-01A-XX",
+		"RC-A6M5-01A-XX",
+		"RC-A6M6-01A-XY",
+		"RC-A7S9-01A-XX",
+		"RC-A7SB-01A-XY",
+		"RC-A7SF-01A-XY",
+		"RC-A7SH-01A-XY",
+		"RC-A7SK-01A-XY",
+		"T1-A6J8-01A-XY",
+		"UB-A7MA-01A-XX",
+		"UB-A7MB-01A-XY",
+		"UB-A7MC-01A-XY",
+		"UB-A7ME-01A-XY",
+		"UB-A7MF-01A-XY",
+		"UB-AA0U-01A-XY",
+		"UB-AA0V-01A-XX",
+		"WJ-A86L-01A-XX",
+		"WQ-A9G7-01A-XX",
+		"WQ-AB4B-01A-XY",
+		"WX-AA46-01A-XY",
+		"WX-AA47-01A-XX",
+		"XR-A8TD-01A-XX",
+		"XR-A8TF-01A-XY",
+		"XR-A8TG-01A-XY",
+		"ZP-A9CZ-01A-XY",
+		"ZP-A9D1-01A-XX",
+		"ZP-A9D2-01A-XY",
+		"ZP-A9D4-01A-XX",
+		"ZS-A9CD-01A-XY",
+		"ZS-A9CE-01A-XX",
+		"ZS-A9CF-01A-XY",
+		"ZS-A9CG-01A-XY"
+		],
+
+	"males": [
+
+	],
+
+	"females": [
+
+	],
+
+  "Comment_TCGA_LIHC_Info": "Sample info for primary tumor RNA seq files. SM is patient ID",
+  "2V-A95S-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2V-A95S",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GT-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GT",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GU-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GV-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GW-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GW",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GX-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GX",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GY-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GY",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9GZ-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9GZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H1-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H2-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H5-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H6-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H7-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H8-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9H9-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9H9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"2Y-A9HA-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-2Y-A9HA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"4R-AA8I-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-4R-AA8I",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5C-A9VG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-5C-A9VG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5C-A9VH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-5C-A9VH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5C-AAPD-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-5C-AAPD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5R-AA1C-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-5R-AA1C",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5R-AA1D-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-5R-AA1D",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"5R-AAAM-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-5R-AAAM",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-4073-01B-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-4073",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10Q-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10Q",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10R-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10R",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10S-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10S",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10T-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10T",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10U-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10U",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10W-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10W",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10X-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10X",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10Y-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10Y",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A10Z-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A10Z",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A112-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A112",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A216-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A216",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A217-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A217",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A3KF-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A3KF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A3KG-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A3KG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A5W4-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A5W4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A69H-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A69H",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A69I-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BC-A69I",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BC-A8YO-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-BC-A8YO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BD-A2L6-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BD-A2L6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BD-A3ER-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BD-A3ER",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"BW-A5NQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-BW-A5NQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5258-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-5258",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5259-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-5259",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5260-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-5260",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5261-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-5261",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5262-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-5262",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5263-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-5263",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-5264-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-5264",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A123-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-A123",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A1HT-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A1HT",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A3M9-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A3M9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A3MA-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A3MA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A3MB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A3MB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A3MC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A3MC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A5UC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A5UC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A5UD-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A5UD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A5UE-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A5UE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IE-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7II-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7II",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IJ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A7IL-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A7IL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A8HS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A8HS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A8HT-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A8HT",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A8HU-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-A8HU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A8HV-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-A8HV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A9FS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A9FS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A9FU-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-CC-A9FU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A9FV-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A9FV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"CC-A9FW-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-CC-A9FW",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A113-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A113",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A115-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A115",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A116-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A116",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A118-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A118",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A119-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A119",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A11B-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A11B",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A11C-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A11C",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A11D-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A11D",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EB-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EC-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1ED-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1ED",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EE-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EF-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EJ-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A1EK-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A1EK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A39V-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A39V",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A39W-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A39W",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A39X-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A39X",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A39Y-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A39Y",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A39Z-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A39Z",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A1-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A2-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A3-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A3",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A4-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A5-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A6-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A7-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A8-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A3A9-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A3A9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NA-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4ND-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4ND",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NE-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NH-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NJ-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NK-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NL-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NN-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NN",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NO-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NP-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NR-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NR",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NS-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A4NV-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A4NV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73A-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73A",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73B-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73B",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73C-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73C",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73D-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73D",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73E-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73E",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73F-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73F",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-A73G-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-A73G",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AA3A-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AA3A",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAC8-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAC8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAC9-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAC9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACA-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACB-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACD-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACE-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACJ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACL-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACN-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACN",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACO-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACP-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACT-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACT",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACU-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACV-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACW-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACW",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACX-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACX",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACY-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACY",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AACZ-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AACZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD0-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD1-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD3-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD3",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD5-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD6-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAD8-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAD8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADA-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADD-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADF-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADI-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADJ-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADK-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADL-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADM-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADM",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADN-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADN",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADO-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADP-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADR-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADR",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADU-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADV-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADW-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADW",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AADY-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AADY",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE0-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE1-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE3-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE3",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE4-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE7-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAE9-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAE9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEA-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAED-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAED",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEE-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEG-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAEK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAEK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVP-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVR-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVR",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVU-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVV-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVV",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVW-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVW",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVX-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVX",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVY-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVY",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAVZ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAVZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAW0-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAW0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAW1-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAW1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAW2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAW2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"DD-AAW3-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-DD-AAW3",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A459-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A459",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A4XI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A4XI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A5KG-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A5KG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A66X-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A66X",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A66Y-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A66Y",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A7PX-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A7PX",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A7PY-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A7PY",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A7PZ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A7PZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A7XO-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A7XO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A7XP-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A7XP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A82E-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A82E",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A8O5-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A8O5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A8O6-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ED-A8O6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ED-A97K-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ED-A97K",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"EP-A26S-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-EP-A26S",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"EP-A2KA-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-EP-A2KA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"EP-A2KB-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-EP-A2KB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"EP-A3JL-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-EP-A3JL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"EP-A3RK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-EP-A3RK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ES-A2HS-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ES-A2HS",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A23B-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A23B",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A2QQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-FV-A2QQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A2QR-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-FV-A2QR",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A3I0-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A3I0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A3I1-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A3I1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A3R2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-FV-A3R2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A3R3-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A3R3",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A495-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A495",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A496-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-FV-A496",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A4ZP-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-FV-A4ZP",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"FV-A4ZQ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-FV-A4ZQ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25S-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25S",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25T-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25T",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25U-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25U",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25V-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25V",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25Y-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25Y",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A25Z-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A25Z",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A3CG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A3CG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A3CH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A3CH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A3CI-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A3CI",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A3CK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A3CK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A5SJ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A5SJ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A5SK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A5SK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A5SL-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A5SL",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A5SM-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A5SM",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A6UC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A6UC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A7M5-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A7M5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A7M6-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-A7M6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A7M7-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A7M7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A7M8-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A7M8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-A7M9-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-A7M9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAUZ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAUZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV0-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV1-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV4-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV5-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV6-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"G3-AAV7-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-G3-AAV7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"GJ-A3OU-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-GJ-A3OU",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"GJ-A6C0-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-GJ-A6C0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"GJ-A9DB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-GJ-A9DB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"HP-A5MZ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-HP-A5MZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"HP-A5N0-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-HP-A5N0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"K7-A5RF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-K7-A5RF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"K7-A6G5-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-K7-A6G5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"K7-AAU7-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-K7-AAU7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"KR-A7K0-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-KR-A7K0",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"KR-A7K2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-KR-A7K2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"KR-A7K7-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-KR-A7K7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"LG-A6GG-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-LG-A6GG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"LG-A9QC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-LG-A9QC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MI-A75C-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MI-A75C",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MI-A75E-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MI-A75E",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MI-A75G-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MI-A75G",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MI-A75H-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MI-A75H",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MR-A520-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MR-A520",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"MR-A8JO-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-MR-A8JO",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"NI-A4U2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-NI-A4U2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"NI-A8LF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-NI-A8LF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"PD-A5DF-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-PD-A5DF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A6M4-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-RC-A6M4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A6M5-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-RC-A6M5",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A6M6-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-RC-A6M6",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A7S9-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-RC-A7S9",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A7SB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-RC-A7SB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A7SF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-RC-A7SF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A7SH-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-RC-A7SH",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"RC-A7SK-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-RC-A7SK",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"T1-A6J8-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-T1-A6J8",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-A7MA-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-UB-A7MA",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-A7MB-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-UB-A7MB",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-A7MC-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-UB-A7MC",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-A7ME-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-UB-A7ME",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-A7MF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-UB-A7MF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-AA0U-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-UB-AA0U",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"UB-AA0V-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-UB-AA0V",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"WJ-A86L-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-WJ-A86L",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"WQ-A9G7-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-WQ-A9G7",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"WQ-AB4B-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-WQ-AB4B",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"WX-AA46-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-WX-AA46",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"WX-AA47-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-WX-AA47",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"XR-A8TD-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-XR-A8TD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"XR-A8TF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-XR-A8TF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"XR-A8TG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-XR-A8TG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZP-A9CZ-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ZP-A9CZ",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZP-A9D1-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ZP-A9D1",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZP-A9D2-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ZP-A9D2",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZP-A9D4-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ZP-A9D4",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZS-A9CD-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ZS-A9CD",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZS-A9CE-01A-XX": {
+		"ID": "0",
+		"SM": "TCGA-ZS-A9CE",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZS-A9CF-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ZS-A9CF",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	},
+	"ZS-A9CG-01A-XY": {
+		"ID": "0",
+		"SM": "TCGA-ZS-A9CG",
+		"LB": "lib1",
+		"PU": "unit1",
+		"PL": "Illumina"
+	}
+
+}

@@ -103,10 +103,6 @@ OBG0019-WMP-RNA2
 
 
 ## Creating the pipeline - TCGA liver cancer tumors
-TBD
-
-For gtex and tcga need to start with bams. See: https://gatk.broadinstitute.org/hc/en-us/articles/360036485372-SamToFastq-Picard-. So go from bams to fastqs to bams https://www.biostars.org/p/326714/
-
 The pipeline using this data can be found `analysis/tcag_lihc_tumor/scripts`.
 
 ```
@@ -115,17 +111,175 @@ cd /scratch/amtarave/TE_expression/analysis
 mkdir tcag_lihc_tumor
 ```
 
+Path to RNA-seq bam files: `/data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam/`
+
+Info on samples to process (primary tumor RNA seq bams): `/scratch/amtarave/introgression_pilot/elife/TCGA_exome_processing/bam.primary.tumor.prefix.txt`.
+
+
 *TODO: For TCGA (and GTEx), I need to check if the samples are unstranded, forward or reverse. Can figure this out using Salmon. See: https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype*
 
-Path to RNA-seq bam files:
-`/data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam`
+https://littlebitofdata.com/en/2017/08/strandness_in_rnaseq/
 
-These bams will need to be converted back to FASTQs and then re-aligned with STAR. All other steps should be the same.
+Install salmon to environment:
+```
+conda install -c bioconda salmon
 
+# Test command on one bam file
+salmon quant -t transcripts.fa -l A -a aln.bam -o salmon_quant
+
+salmon quant -t /data/CEM/shared/public_data/references/GENCODE/gencode.v29.annotation.gtf -l A -a /data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam/2V-A95S-01A-XY_non_maskRNAs_sorted.bam -o salmon_quant_test
+
+salmon quant -t /data/CEM/shared/public_data/references/GENCODE/gencode.v29.annotation.gtf -l A -a /data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam/2V-A95S-01A-XY_non_maskRNAs_sorted.bam -o salmon_quant_test
+
+# Step 1: Build index for transcriptome
+salmon index -t athal.fa.gz -i athal_index
+
+# Step 2: Run salmon quant to get library type
+salmon quant -i <transcriptome index> --libType A \
+             -o <out dir and prefix> -1 test_1.fq.gz -2 test_2.fq.gz
+             -p <assigned threads>
+
+cd /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor
+mkdir library_type
+cd library_type/
+cp /data/CEM/shared/public_data/references/GENCODE/gencode.v29.annotation.gtf .
+# I think I need the fa not gtf
+cd /data/CEM/shared/public_data/references/GENCODE
+cp gencode.v29.transcripts.fa /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/library_type/
+
+#salmon index -t gencode.v29.annotation.gtf -i gencode.v29.annotation_index
+salmon index -t gencode.v29.transcripts.fa -i gencode.v29.annotation_fa_index
+
+#salmon quant -t /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/library_type/gencode.v29.annotation_index -l A -a /data/CEM/shared/controlled_access/TCGA/LIHC/RNA/RNAseq/bam/2V-A95S-01A-XY_non_maskRNAs_sorted.bam -o 2V-A95S-01A-XY_salmon_quant_test
+
+salmon quant -i /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/library_type/gencode.v29.annotation_index --libType A -o 2V-A95S-01A-XY_salmon_quant_test -1 /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/fastqs_converted/2V-A95S-01A-XY_1.fq.gz -2 /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/fastqs_converted/2V-A95S-01A-XY_2.fq.gz
+
+# From Salmon Log
+[2021-04-29 09:20:12.295] [jointLog] [info] Automatically detected most likely library type as IU
+# so it is unstranded
+```
+
+Notes:
+For gtex and tcga need to start with bams. See: https://gatk.broadinstitute.org/hc/en-us/articles/360036485372-SamToFastq-Picard-. So go from bams to fastqs to bams https://www.biostars.org/p/326714/
+
+bam to fastq: https://github.com/broadinstitute/picard/issues/715
+add `VALIDATION_STRINGENCY=SILENT` to command
+
+```
+# Example commands
+java -jar picard.jar SamToFastq
+     I=input.bam
+     FASTQ=output.fastq
+java -jar picard.jar SamToFastq I=<file_alnMAP.bam> FASTQ=<filemap_1.fq> SECOND_END_FASTQ=<filemap_2.fq>
+
+#or
+
+samtools fastq -1 <filemap_1.fq.gz> -2 <filemap_1.fq.gz> <file_alnMAP.bam>
+picard SamToFastq \
+  -Xmx2g \ #THIS
+  I=input.bam \
+  F=out_unmapped_R1.fastq \
+  F2=out_unmapped_R2.fastq \
+  VALIDATION_STRINGENCY=SILENT
+
+
+```
+
+Reads were sequenced to 49 bps, so need to make new STAR indexes for this data
+```
+# Make star index in separate script since this only needs to happen once
+cd /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/scripts
+touch make_STAR_index_lihc.sh
+
+cd /scratch/amtarave/TE_expression
+mkdir STAR_index_GRCh38_p12_genome_XXonly_lihc
+mkdir STAR_index_GRCh38_p12_genome_XY_lihc
+
+```
+
+Submit pipeline
+```
+sbatch lihc_rna_TE_processing.sh
+Submitted batch job 9383516
+
+# memory failure for some star runs. Edit sh to allocate more mem per cpu
+sbatch lihc_rna_TE_processing.sh 
+Submitted batch job 9384529
+
+```
 
 ## Creating the pipeline - GTEx normal liver
-TBD
+The pipeline using this data can be found `analysis/gtex_liver/scripts`.
 
+Converted bams and multiqc reports can be found: `/scratch/amtarave/gtex/`.
+
+Reads seem to be sequenced to 75 bps, so will have to make another STAR index.
+
+```
+# Make star index in separate script since this only needs to happen once
+cd /scratch/amtarave/TE_expression/analysis/gtex_liver/scripts
+touch make_STAR_index_gtex_liver.sh
+
+cd /scratch/amtarave/TE_expression
+mkdir STAR_index_GRCh38_p12_genome_XXonly_gtex_liver
+mkdir STAR_index_GRCh38_p12_genome_XY_gtex_liver
+
+```
+
+###Sample information.
+Downloaded sample information from: https://www.gtexportal.org/home/datasets. Go to GTEx Analysis V8 (dbGaP Accession phs000424.v8.p2), then under "Annotations" there are 4 files:
+- GTEx_Analysis_v8_Annotations_SampleAttributesDD.xlsx
+- GTEx_Analysis_v8_Annotations_SubjectPhenotypesDD.xlsx
+- GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
+- GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+
+`GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt` has sex information. 1 = Male, 2 = Female
+
+```
+mkdir sample_info
+cd sample_info
+wget https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SampleAttributesDD.xlsx
+wget https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDD.xlsx
+wget https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
+wget https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+
+head GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+SUBJID  SEX     AGE     DTHHRDY
+GTEX-1117F      2       60-69   4
+GTEX-111CU      1       50-59   0
+GTEX-111FC      1       60-69   1
+GTEX-111VG      1       60-69   3
+GTEX-111YS      1       60-69   0
+GTEX-1122O      2       60-69   0
+GTEX-1128S      2       60-69   2
+GTEX-113IC      1       60-69   
+GTEX-113JC      2       50-59   2
+
+# note: SUBJID is different from the ID for the RNA-seq data
+# Make list of liver samples and get SUBJID from that. Take liver samples from config
+vi liver_samples.txt
+head liver_samples.txt
+GTEX-11DXY-0526-SM-5EGGQ
+GTEX-11DXZ-0126-SM-5EGGY
+GTEX-11EQ9-0526-SM-5A5JZ
+GTEX-11GSP-0626-SM-5986T
+GTEX-11NUK-1226-SM-5P9GM
+GTEX-11NV4-1326-SM-5HL6V
+GTEX-11OF3-0726-SM-5BC4Z
+GTEX-11TT1-1726-SM-5EQLJ
+GTEX-11TUW-1726-SM-5BC5C
+GTEX-11WQC-0726-SM-5EQMR
+
+# to get SUBJID just cut the first two entries sep by '-'
+cut -f1,2 -d'-' liver_samples.txt > liver_SUBJID.txt
+
+grep -f liver_SUBJID.txt GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt | grep "        1       " | cut -f1 > liver_SUBJID_males.txt
+grep -f liver_SUBJID.txt GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt | grep "        2       " | cut -f1 > liver_SUBJID_females.txt
+
+grep -f liver_SUBJID_males.txt liver_samples.txt > liver_samples_males.txt
+grep -f liver_SUBJID_females.txt liver_samples.txt > liver_samples_females.txt
+
+```
 
 ## Creating the pipeline - 1st term placentas
 TBD
