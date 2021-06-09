@@ -203,7 +203,7 @@ sbatch lihc_rna_TE_processing.sh
 Submitted batch job 9383516
 
 # memory failure for some star runs. Edit sh to allocate more mem per cpu
-sbatch lihc_rna_TE_processing.sh 
+sbatch lihc_rna_TE_processing.sh
 Submitted batch job 9384529
 
 ```
@@ -226,8 +226,7 @@ mkdir STAR_index_GRCh38_p12_genome_XY_gtex_liver
 
 ```
 
-###Sample information.
-Downloaded sample information from: https://www.gtexportal.org/home/datasets. Go to GTEx Analysis V8 (dbGaP Accession phs000424.v8.p2), then under "Annotations" there are 4 files:
+Sample information. Downloaded sample information from: https://www.gtexportal.org/home/datasets. Go to GTEx Analysis V8 (dbGaP Accession phs000424.v8.p2), then under "Annotations" there are 4 files:
 - GTEx_Analysis_v8_Annotations_SampleAttributesDD.xlsx
 - GTEx_Analysis_v8_Annotations_SubjectPhenotypesDD.xlsx
 - GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
@@ -279,6 +278,29 @@ grep -f liver_SUBJID.txt GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt | 
 grep -f liver_SUBJID_males.txt liver_samples.txt > liver_samples_males.txt
 grep -f liver_SUBJID_females.txt liver_samples.txt > liver_samples_females.txt
 
+```
+
+
+Get library type for this data. Test on one sample.
+
+```
+cd /scratch/amtarave/TE_expression/analysis/gtex_liver
+mkdir library_type
+cd library_type/
+# use index created when I ran this for tcga
+
+salmon quant -i /scratch/amtarave/TE_expression/analysis/tcag_lihc_tumor/library_type/gencode.v29.annotation_fa_index --libType A -o GTEX-11DXY-0526-SM-5EGGQ_salmon_quant_test -1 /scratch/amtarave/gtex/trimmed_fastqs/GTEX-11DXY-0526-SM-5EGGQ_1_trimmed.fq.gz -2 /scratch/amtarave/gtex/trimmed_fastqs/GTEX-11DXY-0526-SM-5EGGQ_2_trimmed.fq.gz
+
+# From output
+[2021-06-09 10:50:57.253] [jointLog] [info] Automatically detected most likely library type as IU
+# IU is unstranded
+```
+
+Run pipeline.
+
+```
+sbatch gtex_rna_TE_processing.sh
+Submitted batch job 9682191
 ```
 
 ## Creating the pipeline - 1st term placentas
